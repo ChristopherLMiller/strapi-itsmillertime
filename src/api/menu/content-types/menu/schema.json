@@ -1,0 +1,60 @@
+{
+  "kind": "collectionType",
+  "collectionName": "menus",
+  "info": {
+    "singularName": "menu",
+    "pluralName": "menus",
+    "displayName": "Menu",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "path": {
+      "type": "string"
+    },
+    "isParent": {
+      "type": "boolean",
+      "default": false
+    },
+    "children": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::menu.menu"
+    },
+    "authState": {
+      "type": "enumeration",
+      "enum": [
+        "LOGGED_OUT",
+        "LOGGED_IN",
+        "PRIVILEGED",
+        "ANY"
+      ],
+      "default": "ANY"
+    },
+    "authRoles": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "plugin::users-permissions.role"
+    },
+    "order": {
+      "type": "integer",
+      "required": true,
+      "default": 0,
+      "unique": true
+    },
+    "icon": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

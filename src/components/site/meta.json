@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_site_metas",
+  "info": {
+    "displayName": "Meta"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "required": true,
+      "maxLength": 100,
+      "minLength": 20
+    },
+    "path": {
+      "type": "string",
+      "required": true,
+      "default": "/"
+    }
+  }
+}
