@@ -9,17 +9,18 @@
     "develop": "strapi develop",
     "seed:example": "node ./scripts/seed.js",
     "start": "strapi start",
-    "strapi": "strapi"
+    "strapi": "strapi",
+    "generate-types": "strapi ts:generate-types"
   },
   "dependencies": {
-    "@strapi/plugin-cloud": "5.3.0",
-    "@strapi/plugin-color-picker": "^5.3.0",
-    "@strapi/plugin-documentation": "^5.3.0",
+    "@strapi/plugin-cloud": "5.4.2",
+    "@strapi/plugin-color-picker": "^5.4.2",
+    "@strapi/plugin-documentation": "^5.4.2",
     "@strapi/plugin-graphql": "5",
-    "@strapi/plugin-sentry": "^5.3.0",
+    "@strapi/plugin-sentry": "^5.4.2",
     "@strapi/plugin-seo": "2",
-    "@strapi/plugin-users-permissions": "5.3.0",
-    "@strapi/strapi": "5.3.0",
+    "@strapi/plugin-users-permissions": "5.4.2",
+    "@strapi/strapi": "5.4.2",
     "better-sqlite3": "11.3.0",
     "fs-extra": "^10.0.0",
     "mime-types": "^2.1.27",
@@ -43,5 +44,6 @@
   },
   "strapi": {
     "uuid": "b6dc2484-7a0b-48ed-821f-c3d0bf4fc045"
-  }
+  },
+  "packageManager": "pnpm@9.13.2+sha512.88c9c3864450350e65a33587ab801acf946d7c814ed1134da4a924f6df5a2120fd36b46aab68f7cd1d413149112d53c7db3a4136624cfd00ff1846a0c6cef48a"
 }

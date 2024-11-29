@@ -19,10 +19,6 @@
     "path": {
       "type": "string"
     },
-    "isParent": {
-      "type": "boolean",
-      "default": false
-    },
     "children": {
       "type": "relation",
       "relation": "oneToMany",
@@ -30,7 +26,12 @@
     },
     "authState": {
       "type": "enumeration",
-      "enum": ["LOGGED_OUT", "LOGGED_IN", "PRIVILEGED", "ANY"],
+      "enum": [
+        "LOGGED_OUT",
+        "LOGGED_IN",
+        "PRIVILEGED",
+        "ANY"
+      ],
       "default": "ANY"
     },
     "authRoles": {
@@ -45,9 +46,12 @@
       "unique": false
     },
     "icon": {
-      "allowedTypes": ["images"],
       "type": "media",
-      "multiple": false
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
     }
   }
 }

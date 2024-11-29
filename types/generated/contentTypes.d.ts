@@ -454,13 +454,11 @@ export interface ApiMenuMenu extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     icon: Schema.Attribute.Media<'images'>;
-    isParent: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::menu.menu'> &
       Schema.Attribute.Private;
     order: Schema.Attribute.Integer &
       Schema.Attribute.Required &
-      Schema.Attribute.Unique &
       Schema.Attribute.DefaultTo<0>;
     path: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
