@@ -29,7 +29,7 @@
     "wordCount": {
       "type": "integer"
     },
-    "post_category": {
+    "postCategory": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::post-category.post-category"
@@ -37,6 +37,9 @@
     "content": {
       "type": "richtext",
       "required": true
+    },
+    "publicationDate": {
+      "type": "datetime"
     }
   }
 }

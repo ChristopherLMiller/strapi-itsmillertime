@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2024-11-29T06:06:59.586Z"
+    "x-generation-date": "2024-12-19T06:07:08.286Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -8928,7 +8928,7 @@
               "wordCount": {
                 "type": "integer"
               },
-              "post_category": {
+              "postCategory": {
                 "oneOf": [
                   {
                     "type": "integer"
@@ -8941,6 +8941,10 @@
               },
               "content": {
                 "type": "string"
+              },
+              "publicationDate": {
+                "type": "string",
+                "format": "date-time"
               },
               "locale": {
                 "type": "string"
@@ -9024,7 +9028,7 @@
           "wordCount": {
             "type": "integer"
           },
-          "post_category": {
+          "postCategory": {
             "type": "object",
             "properties": {
               "id": {
@@ -9095,6 +9099,10 @@
           "content": {
             "type": "string"
           },
+          "publicationDate": {
+            "type": "string",
+            "format": "date-time"
+          },
           "createdAt": {
             "type": "string",
             "format": "date-time"
@@ -9155,7 +9163,7 @@
                 "wordCount": {
                   "type": "integer"
                 },
-                "post_category": {
+                "postCategory": {
                   "type": "object",
                   "properties": {
                     "id": {
@@ -9168,6 +9176,10 @@
                 },
                 "content": {
                   "type": "string"
+                },
+                "publicationDate": {
+                  "type": "string",
+                  "format": "date-time"
                 },
                 "createdAt": {
                   "type": "string",
