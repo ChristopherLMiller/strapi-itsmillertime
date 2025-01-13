@@ -478,9 +478,16 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
     singularName: 'page';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
+    authRoles: Schema.Attribute.Relation<
+      'oneToMany',
+      'plugin::users-permissions.role'
+    >;
+    authState: Schema.Attribute.Enumeration<
+      ['LOGGED_OUT', 'LOGGED_IN', 'PRIVILEGED', 'ANY']
+    >;
     content: Schema.Attribute.RichText & Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -489,10 +496,6 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::page.page'> &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    roles: Schema.Attribute.Relation<
-      'oneToMany',
-      'plugin::users-permissions.role'
-    >;
     seo: Schema.Attribute.Component<'shared.seo', false> &
       Schema.Attribute.Required;
     slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
@@ -542,7 +545,7 @@ export interface ApiPostPost extends Struct.CollectionTypeSchema {
     singularName: 'post';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     content: Schema.Attribute.RichText & Schema.Attribute.Required;

@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2024-12-19T06:07:08.286Z"
+    "x-generation-date": "2025-01-13T06:14:22.062Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -7846,7 +7846,7 @@
               "content": {
                 "type": "string"
               },
-              "roles": {
+              "authRoles": {
                 "type": "array",
                 "items": {
                   "oneOf": [
@@ -7862,6 +7862,15 @@
               },
               "seo": {
                 "$ref": "#/components/schemas/SharedSeoComponent"
+              },
+              "authState": {
+                "type": "string",
+                "enum": [
+                  "LOGGED_OUT",
+                  "LOGGED_IN",
+                  "PRIVILEGED",
+                  "ANY"
+                ]
               },
               "locale": {
                 "type": "string"
@@ -7943,7 +7952,7 @@
           "content": {
             "type": "string"
           },
-          "roles": {
+          "authRoles": {
             "type": "array",
             "items": {
               "type": "object",
@@ -8449,6 +8458,15 @@
           "seo": {
             "$ref": "#/components/schemas/SharedSeoComponent"
           },
+          "authState": {
+            "type": "string",
+            "enum": [
+              "LOGGED_OUT",
+              "LOGGED_IN",
+              "PRIVILEGED",
+              "ANY"
+            ]
+          },
           "createdAt": {
             "type": "string",
             "format": "date-time"
@@ -8506,7 +8524,7 @@
                 "content": {
                   "type": "string"
                 },
-                "roles": {
+                "authRoles": {
                   "type": "array",
                   "items": {
                     "type": "object",
@@ -8522,6 +8540,15 @@
                 },
                 "seo": {
                   "$ref": "#/components/schemas/SharedSeoComponent"
+                },
+                "authState": {
+                  "type": "string",
+                  "enum": [
+                    "LOGGED_OUT",
+                    "LOGGED_IN",
+                    "PRIVILEGED",
+                    "ANY"
+                  ]
                 },
                 "createdAt": {
                   "type": "string",

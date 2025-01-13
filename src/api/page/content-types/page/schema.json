@@ -8,7 +8,7 @@
     "description": ""
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
@@ -25,7 +25,7 @@
       "type": "richtext",
       "required": true
     },
-    "roles": {
+    "authRoles": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "plugin::users-permissions.role"
@@ -35,6 +35,15 @@
       "repeatable": false,
       "component": "shared.seo",
       "required": true
+    },
+    "authState": {
+      "type": "enumeration",
+      "enum": [
+        "LOGGED_OUT",
+        "LOGGED_IN",
+        "PRIVILEGED",
+        "ANY"
+      ]
     }
   }
 }
