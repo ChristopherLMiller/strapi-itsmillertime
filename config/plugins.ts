@@ -19,6 +19,49 @@ export default ({ env }) => ({
       },
     },
   },
+  blurhash: {
+    enabled: true,
+    config: {
+      regenerateOnUpdate: true,
+      forceRegenerateOnUpdate: false,
+    },
+  },
+  email: {
+    config: {
+      provider: 'strapi-provider-email-resend',
+      providerOptions: {
+        apiKey: env('RESEND_API_KEY'),
+      },
+      settings: {
+        defaultFrom: env('RESEND_DEFAULT_FROM'),
+        defaultReplyTo: env('RESEND_DEFAULT_REPLY_TO'),
+      },
+    },
+  },
+  'preview-button': {
+    config: {
+      contentTypes: [
+        {
+          uid: 'api::post.post',
+          published: {
+            url: `${env('FRONTEND_URL')}/articles/{slug}`,
+          },
+        },
+        {
+          uid: 'api::page.page',
+          published: {
+            url: `${env('FRONTEND_URL')}/{slug}`,
+          },
+        },
+        /*{
+          uid: 'api::model.model',
+          published: {
+            url: `${env('FRONTEND_URL')}/models/{slug}`,
+          },
+        },*/
+      ],
+    },
+  },
   upload: {
     config: {
       provider: 'strapi-provider-cloudflare-r2',

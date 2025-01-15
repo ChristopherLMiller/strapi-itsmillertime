@@ -3,15 +3,12 @@ import type { Schema, Struct } from '@strapi/strapi';
 export interface SharedMetaSocial extends Struct.ComponentSchema {
   collectionName: 'components_shared_meta_socials';
   info: {
+    description: '';
     displayName: 'metaSocial';
     icon: 'project-diagram';
   };
   attributes: {
-    description: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 65;
-      }>;
+    description: Schema.Attribute.String & Schema.Attribute.Required;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
     socialNetwork: Schema.Attribute.Enumeration<['Facebook', 'Twitter']> &
       Schema.Attribute.Required;
@@ -26,6 +23,7 @@ export interface SharedMetaSocial extends Struct.ComponentSchema {
 export interface SharedSeo extends Struct.ComponentSchema {
   collectionName: 'components_shared_seos';
   info: {
+    description: '';
     displayName: 'seo';
     icon: 'search';
   };
@@ -35,7 +33,6 @@ export interface SharedSeo extends Struct.ComponentSchema {
     metaDescription: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 160;
         minLength: 50;
       }>;
     metaImage: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
