@@ -53,13 +53,28 @@ export default ({ env }) => ({
             url: `${env('FRONTEND_URL')}/{slug}`,
           },
         },
-        /*{
-          uid: 'api::model.model',
-          published: {
-            url: `${env('FRONTEND_URL')}/models/{slug}`,
-          },
-        },*/
       ],
+    },
+  },
+  redis: {
+    config: {
+      settings: {
+        debug: false,
+        enableRedlock: true,
+      },
+      connections: {
+        default: {
+          connection: {
+            host: env('UPSTASH_URL'),
+            port: env('UPSTASH_PORT'),
+            db: 0,
+            password: env('UPSTASH_TOKEN'),
+          },
+          settings: {
+            debug: false,
+          },
+        },
+      },
     },
   },
   upload: {
