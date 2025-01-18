@@ -20,7 +20,7 @@ export default ({ env }) => ({
     },
   },
   blurhash: {
-    enabled: true,
+    enabled: env.bool('BLURHASH_ENABLED', false),
     config: {
       regenerateOnUpdate: true,
       forceRegenerateOnUpdate: false,
@@ -57,6 +57,7 @@ export default ({ env }) => ({
     },
   },
   redis: {
+    enabled: env.bool('REDIS_ENABLED', false),
     config: {
       settings: {
         debug: false,
@@ -65,10 +66,12 @@ export default ({ env }) => ({
       connections: {
         default: {
           connection: {
-            host: env('UPSTASH_URL'),
-            port: env('UPSTASH_PORT'),
+            host: env('REDIS_HOST'),
+            username: env('REDIS_USERNAME'),
+            port: env('REDIS_PORT'),
             db: 0,
-            password: env('UPSTASH_TOKEN'),
+            password: env('REDIS_PASSWORD'),
+            tls: {},
           },
           settings: {
             debug: false,
