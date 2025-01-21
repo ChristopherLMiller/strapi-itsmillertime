@@ -66,7 +66,13 @@ export default ({ env }) => [
   },
   'strapi::query',
   'strapi::body',
-  'strapi::session',
+  {
+    name: 'strapi::session',
+    config: {
+      rolling: true,
+      renew: true,
+    },
+  },
   'strapi::favicon',
   'strapi::public',
 ];
